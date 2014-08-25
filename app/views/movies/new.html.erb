@@ -1,0 +1,33 @@
+
+<%= form_for @movie do |f| %>
+  <% if @movie.errors[:name].any? %>
+    <div class="errors">
+      <ul>
+        <% @movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+<br/>
+
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+
+<br/>
+
+
+  <%= f.label :synopsis %>
+  <%= f.text_area :synopsis %>
+
+
+<%= f.submit %>
+
+
+
+<% end %>
+
+
